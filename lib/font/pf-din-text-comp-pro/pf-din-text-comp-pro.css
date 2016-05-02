@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-ThinItal.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-LightItal.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-RegularItal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-MediumItal.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pf Din Text Comp Pro';
+    src: url('PFDinTextCompPro-BoldItal.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}

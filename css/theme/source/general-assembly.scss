@@ -1,0 +1,99 @@
+/**
+ * General Assembly theme for reveal.js.
+ *
+ * By Jess Telford, @jesstelford
+ */
+
+// Responsive font base. See:
+// http://madebymike.com.au/writing/precise-control-responsive-typography/
+:root {
+  font-size: 18px;
+}
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/pf-din-text-comp-pro/pf-din-text-comp-pro.css);
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #000;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+// Responsive fonts. See:
+// http://madebymike.com.au/writing/precise-control-responsive-typography/
+$mainFontSize: 2.9vw;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Pf Din Text Comp Pro', 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: bold;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$headingLineHeight: 0.9em;
+
+$heading1Size: 1.0em;
+$heading2Size: 4.0em;
+$heading3Size: 1.8em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #222;
+  }
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal {
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: $headingLineHeight;
+  }
+
+
+  section.has-light-background {
+    h1 {
+      border-color: black;
+    }
+  }
+
+  h1 {
+    padding: 0.4em 0 0.2em 0;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 1.5em;
+
+    &.with-logo::before {
+      content: '';
+      display: inline-block;
+      width: $mainFontSize;
+      height: $headingLineHeight * 0.8;
+      background: url('https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png') no-repeat;
+      background-size: auto 100%;
+      vertical-align: text-top;
+    }
+  }
+
+  .slides {
+    text-align: left;
+  }
+
+  pre {
+    width: 100%;
+  }
+
+}
