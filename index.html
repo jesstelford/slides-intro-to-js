@@ -75,6 +75,28 @@ Note:
 
 # Introduction to Javascript
 
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+var theTweets = tweets.map(makeTweet).join('<br>')
+document.querySelector('section').innerHTML = theTweets
+```
+
+Note:
+- A taster!
+- In 1hr we'll understand all this
+
+~~~
+
+# Introduction to Javascript
+
 ### Google Chrome
 
 `http://chrome.google.com`
@@ -207,36 +229,14 @@ Note:
 
 ### CSS
 
+http://bit.ly/html-example
+
 * Find `<head></head>`
-* Right click > "Edit as HTML":
-
-```html
-<style>
-  body {
-    background-color: lightslategray;
-  }
-  section {
-    font-size: 30px;
-    color: white;
-  }
-</style>
-```
-
-Note:
-- Same as for `<body>`
-- Hand up when done
-- Then, refresh the page - all changes are gone!
-
-~~~
-
-# Introduction to Javascript
-
-### CSS
-
-http://TODO: Publish a static page with this stuff in it already (gh-pages?)
+* Click arrow to view the style
 
 Note:
 - Base to work from
+- Hand up when done
 
 ~~~
 
@@ -259,7 +259,8 @@ _Console_ tab
 
 Note:
 - In console, can run JS
-- Example
+- Autocomplete
+- Example: `Math.PI`
 - Now you try
 - [Hands up when done]
 
@@ -268,8 +269,6 @@ Note:
 # Javascript
 
 ### Types
-
-<!-- TOOD: a table? -->
 
 <ul>
 <li class="fragment">`Math.PI`<span class="fragment"> - _number_</span></li>
@@ -309,6 +308,40 @@ Note:
 - `null`/`undefined`: different from 0; implies a collection.
 - Object is a container of other types
 - We'll deal with strings & objects mostly today (most fun!)
+- That's the fundamentals out of the way
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Introduction to Javascript
+
+## Review
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Review
+
+### Fundamentals
+
+<ul>
+<li class="fragment">HTML for content</li>
+<li class="fragment">CSS for styling</li>
+<li class="fragment">JS for functionality
+  <ul>
+    <li class="fragment">Console</li>
+    <li class="fragment">Types</li>
+  </ul>
+</li>
+</ul>
+
+~~~
+
+# Types of values
+
+## Objects
 
 ~~~
 
@@ -322,8 +355,7 @@ _aka: key/value pairs_
 
 ```javascript
 {
-  tweet: "Hello world",
-  author: "jesstelford"
+  tweet: "Hello world", author: "jesstelford"
 }
 ```
 
@@ -343,8 +375,6 @@ Note:
 
 # Types of values
 
-### Objects
-
 ## JSON
 
 ~~~
@@ -359,9 +389,14 @@ Give it a try:
 {name: "Sam Gogetter", age: 42}
 ```
 
+Will output:
+
+_`object {name: "Sam Gogetter", age: 42}`_
+
 Note:
 - Try it in console
 - Hand up when done
+- _object_ in output = JS recognizing it's an object
 
 ~~~
 
@@ -565,201 +600,853 @@ Note:
 * "Scripts" tab
 * "Snippets" (on left)
 * Right click > "New"
-* Name it `printer.js`
-
-~~~
-
-TODO:
-
-* Functions
-  * "Snippets" tab in Chrome to save their work
-  * Let's create our own function, `printer()` which outputs a string (`console.log("hello Jess")`?)
-    * Does the same thing every time
-    * Imagine if your website had 1000 users, you'd have to create 1000 unique functions!
-  * Change it to add a parameter for the name.
-    * `console.log("hello " + name)`
-    * The `+` joins the two strings together
-  * And alter the string in some way (eg; `str.toUpperCase()`, or `str + '!!!'`)
-  * Execute that function 3 times in a row with different data.
-    * Better than before, repeating the same thing.
-    * But; Ugh, so much repetition. If we had 1000 users, we'd still need to execute the function 1000 times
-* Arrays
-  * Arrays to the rescue!
-  * Another type; a _collection_ of other types
-    * If variables are buckets. Arrays are an empty bathtub full of buckets
-  * Create an array;
-  ```javascript
-  ["hello", "hi", "g'day"]
-  ```
-  * Square brackets and commas: square brackets are the bathtub, commas separate the buckets
-  * Like a string, has some methods. One is `forEach` to do something once per item in the array. Also known as "looping" or "iterating" over the array values.
-  * Loop over it using: `["Jess", "Kylie", "Vin"].forEach(printer)`
-  * Why is this better? Imagine you've got a huge array of values. Think; tweets on twitter! You can't write `printer()` over and over again millions of times. Instead, you iterate / loop over the array values.
-* Functions again
-  * Change `printer` to `return` instead of `console.log`
-  * `return` means to pass the new value back out of the function. So far, we've `console.log`'d, which only provides value _for our eyes_. The code can't do anything with it, unless it is `return`'d.
-  * Try run `.forEach` now; notice `undefined`. Because; `forEach` doesn't know what to do with that `return`'d value. But, `.map` does!
-  * Change the `forEach` to a `map` - still iterating, but now it captures those `return` values.
-  * Now it outputs a new array! Cool!
-* tweet function
-  * Create an array of tweets:
-  ```javascript
-  [
-    {tweet: "hello", name: "jesstelford"},
-    {tweet: "hi", name: "taylorswift"},
-    {tweet: "g'day", name: "bigbird"}
-  ]
-  ```
-    * Remember: An array is a collection of other values. Each value in this case is an object. And an object itself can also contain other values, each with a "key".
-  * New function; `makeTweet` which takes the tweet object from earlier as the parameter and makes a string out of it:
-  ```javascript
-  function makeTweet(tweetData) {
-    return tweetData.tweet + ' by @' + tweetData.name
-  }
-  ```
-  * `.map` over the array as before, and see the output is now an array of strings!
-  * Use the built in string function `.join` to connect them with `<br />`'s
-  * Capture the output string into a new variable
-  * Now, `console.log` that variable
-* DOM
-  * This is all good fun, but our users can't see the output. They can't be expected to open up the Console just to see the tweets! Let's get it into the page.
-  * Remember way back at the start, we saw this:
-  ```html
-  <body>                   * body
-    <section>                * section
-      <p>Hello</p>             * p: Hello
-      <p>World</p>             * p: World
-    </section>
-  </body>
-  ```
-  * The left is the HTML, the right is the DOM - Document Object Model. It's a way to represent HTML so Javascript can interact with it.
-  * To select a HTML element, you can use `document.querySelector` function:
-  * Back in the "Console" tab;
-  * `document.querySelector('section')`
-  * Use `document.querySelector('section').innerHTML` to see the HTML there
-  * And it's a normal variable, so we can give it a new value if we wish:
-  * `document.querySelector('section').innerHTML = greeting`
-  * Look at the page! The contents have been replaced!
-  * Back to our snippet code;
-  * Can we replace the contents of the page with the output of our `makeTweet` function?
-  * Nice! - we've injected stuff into the page based on that one original array!
-  * Check it out in the elements tab
-* Part Time GA course starting on May 23rd.
-
-
-
-
-~~~
-
-# Demo
-
-### Vertical Slides
-
-Slides can be nested inside each other.
-
----
-
-# Vertical Slides
-
-### Basement Level 1
-
-Nested slides are useful for adding additional detail underneath a high level horizontal slide.
-
----
-
-# Vertical Slides
-
-### Basement Level 2
-
-That's it, time to go back up.</p>
-
-~~~
-
-# Demo
-### Markdown support
-
-Write content using inline Markdown.
-Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-Slides are split with `'~~~'`
-
-~~~
-
-# Demo
-## Fragments
-
-Hit the next arrow...
-
-... to step through <!-- .element: class="fragment" -->
-
-<span class="fragment">... a</span>
-<span class="fragment">... fragmented</span>
-<span class="fragment">slide</span>
-
-TADA!
+* Name it `greeter.js`
 
 Note:
-  This slide has fragments which are also stepped through in the notes window.
+- Show a demo
 
 ~~~
 
-<!-- .slide: data-background="#dddddd" -->
-# Demo
-## Slide Backgrounds
+# Writing functions
 
-Set `data-background="#dddddd"` on a slide to change the background color. All CSS color formats are supported.
+### Our first function
 
----
+```javascript
+function greeter() {
+  console.log("Hello Jess")
+}
+```
 
-# Slide Backgrounds
+<ul>
+<li class="fragment">Create a function</li>
+<li class="fragment">Called `greeter`</li>
+<li class="fragment">That prints a string</li>
+</ul>
 
-<!-- .slide: data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" -->
-## Image Backgrounds
-```html
-<!-- .slide: data-background="image.png" -->
+Note:
+- Read it like a sentence
+- [2 min]: Type this out in the Snippet window (show them)
+- Right click > save
+
+~~~
+
+# Writing functions
+
+### Executing our function
+
+- Right click code > select "Save"
+- Right click `greeter.js` > select "Run"
+- "Console" tab
+- Type, then press <Enter>:
+  ```javascript
+  greeter()
+  ```
+
+Note:
+- Hand up once complete
+
+~~~
+
+# Writing functions
+
+### Our first function
+
+```javascript
+function greeter() {
+  console.log("Hello Jess")
+}
+```
+
+Note:
+- Same thing every time.
+- Imagine 1000 names === 1000 functions!
+
+~~~
+
+# Writing functions
+
+### Our first function
+
+```javascript
+greeterForAmy()
+greeterForJess()
+greeterForAsh()
+greeterForSamantha()
+...
+...
+greeterForLeeroy()
 ```
 
 ~~~
 
-# Demo
+# Writing functions
 
-### Code examples
-
-Triple backticks (\`\`\`) to show syntax highlighted code examples:
+### Our first function
 
 ```javascript
-Array(16).join("lol" - 2) + " Batman!";
-```
-
-~~~
-
-# Demo
-
-### Zooming
-
-`Alt+click` (_Linux: `Ctrl+Alt+click`_) to zoom an element.
-
-Great for code examples!
-
-```javascript
-speak('hello, world!')
-
-function speak(words) {
-  console.log(words)
+function greeter() {
+  console.log("Hello Jess")
 }
 ```
 
 ~~~
 
-# Demo
+# Writing functions
 
-### Responsive layout
+### Adding a parameter
 
-The layout is reponsive to the screen size. This is great for using across different projectors, etc.
+```javascript
+function greeter(name) {
+  console.log("Hello " + name)
+}
+```
 
-Be sure to test your deck by resizing the window at least once.
+Note:
+- `+` is adding to the end of the string
+- `name` is a variable; the parameter we pass becomes the value of `name`
 
-(_try it out now_)
+~~~
+
+# Writing functions
+
+### Executing our function
+
+- Save
+- Run
+- In "Console":
+
+```javascript
+greeter("Amy")
+```
+
+Note:
+- [2 min] Try it
+- Hands up when complete
+- Example running it 3 times with different names
+- 1000 = 1 function now!
+
+~~~
+
+# Writing functions
+
+### Executing our function
+
+```javascript
+greeter("Amy")
+greeter("Jess")
+greeter("Ash")
+greeter("Samantha")
+...
+...
+greeter("Leeroy")
+```
+
+Note:
+- But; 1 function run 1000 times :(
+
+~~~
+
+<img src="http://i.giphy.com/54PaD9dWT0go.gif" style="height: 80vh; margin: 0 auto; display: block" />
+
+~~~
+
+# Writing functions
+
+## Arrays To the rescue!
+
+Note:
+- Another type; a _collection_ of other types
+- Similar to how objects are
+- variables = buckets; arrays = series of buckets
+
+~~~
+
+# Writing functions
+
+### Arrays
+
+```javascript
+["Amy", "Samantha", "Leeroy"]
+```
+
+Note:
+- square brackets
+- value == bucket
+
+~~~
+
+# Writing functions
+
+### Array Functions
+
+```javascript
+["Amy", "Samantha", "Leeroy"]
+```
+
+<span class="fragment">`.forEach()`</span>
+
+Note:
+- Like string; has method
+
+~~~
+
+# Writing functions
+
+### Array Functions
+
+```javascript
+["Amy", "Samantha", "Leeroy"]
+```
+
+`.forEach()`
+
+```javascript
+["Amy", "Samantha", "Leeroy"].forEach(greeter)
+```
+
+<span class="fragment">Try this in the "Console"</span>
+
+Note:
+- Do something once per value in array
+- aka; Iterating / looping
+- Try it [hand up when complete]
+- Why good?
+  - imagine twitter writing out `greeter` millions of times!
+  - Instead, iterate over the array
+
+~~~
+
+# Writing functions
+
+### Returning
+
+```javascript
+function greeter(name) {
+  console.log("Hello " + name)
+}
+```
+
+Note:
+- console.log is for your eyes only
+- What can JS do with `"Hello" + name`? Nothing
+- Change it slightly...
+
+~~~
+
+# Writing functions
+
+### Returning
+
+```javascript
+function greeter(name) {
+  return "Hello " + name
+}
+```
+
+Note:
+- Now, JS can do something with `"Hello" + name`
+- `return` pass value back out
+- recipe: `return` == the finished dish
+
+~~~
+
+# Writing functions
+
+### Returning
+
+* Edit `greeter.js`
+* Save
+* Run
+
+```javascript
+function greeter(name) {
+  return "Hello " + name
+}
+```
+
+~~~
+
+# Writing functions
+
+### Returning
+
+```javascript
+["Amy", "Samantha", "Leeroy"].forEach(greeter)
+```
+
+Note:
+- Press `up` to get last command entered
+- No more output (only `undefined`)
+- forEach doesn't understand `return`
+- Arrays have another built in function: map
+
+~~~
+
+# Writing functions
+
+### Returning
+
+```javascript
+["Amy", "Samantha", "Leeroy"].map(greeter)
+```
+
+Note:
+- understands return
+- gives us a new array
+
+~~~
+
+# Writing functions
+
+### Returning
+
+```javascript
+["Amy", "Samantha", "Leeroy"].map(greeter)
+```
+
+Output:
+
+```text
+▼ Array[3]
+  0: "Hello Amy"
+  1: "Hello Samantha"
+  2: "Hello Leeroy"
+```
+
+Note:
+- Hurray!
+- Learned a new function, `map`, and `return`
+- Add that line to the bottom of `greeter.js`
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Writing functions
+
+## Review
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Review
+
+`greeter.js`:
+
+```javascript
+function greeter(name) {
+    return "Hello " + name
+}
+["Amy", "Samantha", "Leeroy"].map(greeter)
+```
+
+Output:
+
+```text
+▼ Array[3]
+  0: "Hello Amy"
+  1: "Hello Samantha"
+  2: "Hello Leeroy"
+```
+
+Note:
+- walk through the function
+- it's a _recipe_
+- types (array, string)
+- `.map` function = iterator / visit each value in array
+
+~~~
+
+# Writing functions
+
+## Tweets
+
+_(sort of)_
+
+~~~
+
+# Tweets
+
+### Setup
+
+* In "Snippets"
+* Right click > "New"
+* `tweeter.js`
+* copy + paste from http://bit.ly/maketweet
+* Right click > "Save"
+
+Note:
+- To save on typing
+
+~~~
+
+# Tweets
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+
+Note:
+- Array is collection of values
+- values are objects
+- object have string values in them
+- `makeTweet` is very similar to `greeter` func
+
+~~~
+
+# Tweets
+
+### `.map()`
+
+Note:
+- As before, `.map` over array
+
+~~~
+
+# Tweets
+
+### `.map()`
+
+```javascript
+tweets.map(makeTweet)
+```
+
+Note:
+- Try it out in the console
+- If it works, add it to your "snippet"
+
+~~~
+
+# Tweets
+
+### `.map()`
+
+```javascript
+tweets.map(makeTweet)
+```
+
+Output:
+
+```text
+▼ Array[3]
+  0: "hello by @jesstelford"
+  1: "hi by @taylorswift"
+  2: "g'day by @bigbird"
+```
+
+Note:
+- Outputting an array isn't so useful
+
+~~~
+
+# Tweets
+
+### `.join()`
+
+Note:
+- Converts array to string
+
+~~~
+
+# Tweets
+
+### `.join()`
+
+```javascript
+tweets.map(makeTweet).join()
+```
+
+Output:
+
+```text
+hello by @jesstelford,hi by @taylorswift,g'day by @bigbird
+```
+
+Note:
+- Don't add to "snippet" yet
+- Added a comma
+
+~~~
+
+# Tweets
+
+### `.join()`
+
+```javascript
+tweets.map(makeTweet).join('<br>')
+```
+
+Note:
+- Can change with a parameter
+- `<br>` is HTML (break / new line)
+
+~~~
+
+# Tweets
+
+### `.join()`
+
+```javascript
+tweets.map(makeTweet).join('<br>')
+```
+
+Output:
+
+```text
+hello by @jesstelford<br>hi by @taylorswift<br>g'day by @bigbird
+```
+
+Note:
+- Add to "Snippet"
+- Save
+
+~~~
+
+# Introduction To Javascript
+
+## Dom
+
+Note:
+- Fun, but no one can see it
+- To put JS output into page, use DOM
+- DOM = Document Object Model
+- It's how JS interacts with HTML
+
+~~~
+
+# DOM
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+
+Note:
+- Remember this from the start?
+- Right == DOM
+- How do you interact with them?
+
+~~~
+
+# Dom
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector()
+```
+
+Note:
+- Pick out a DOM element
+
+~~~
+
+# Dom
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector('section')
+```
+
+Note:
+- Parameter = HTML element name
+- No angle brackets needed
+
+~~~
+
+# Dom
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector('section')
+```
+<!-- .element: class="lolight" -->
+
+Output:
+
+```html
+► <section>...</section>
+```
+
+Note:
+- Try it out in "Console"
+
+~~~
+
+# Dom
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector('section').innerHTML
+```
+
+Note:
+- HTML contents as a string
+- It's a variable!
+
+~~~
+
+# Dom
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector('section').innerHTML
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+document.querySelector('section').innerHTML = 'Foo Bar'
+```
+
+Note:
+- Can set any string to it.
+- Notice the Page changed!
+- JS can change HTML!
+
+~~~
+
+# Dom
+
+`tweeter.js`
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+<!-- .element: class="squash" -->
+
+```javascript
+tweets.map(makeTweet).join('<br>')
+```
+
+Note:
+- Can we use this to modify the DOM?
+
+~~~
+
+# Dom
+
+`tweeter.js`
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+<!-- .element: class="squash lolight" -->
+
+```javascript
+tweets.map(makeTweet).join('<br>')
+```
+
+Note:
+- Output on last line
+- Returns a _string_
+- `innerHTML` takes a string!
+
+~~~
+
+# Dom
+
+`tweeter.js`
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+<!-- .element: class="squash lolight" -->
+
+```javascript
+var theTweets = tweets.map(makeTweet).join('<br>')
+```
+
+Note:
+- First, save it to a variable
+- Save, and Run
+
+~~~
+
+# Dom
+
+`tweeter.js`
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+<!-- .element: class="squash lolight" -->
+
+```javascript
+var theTweets = tweets.map(makeTweet).join('<br>')
+document.querySelector('section').innerHTML = theTweets
+```
+
+Note:
+- Now, set it as the HTML
+- Should see the tweets
+
+~~~
+
+# Dom
+
+`tweeter.js`: http://bit.ly/tweeterjs
+
+```javascript
+var tweets = [
+  {tweet: "hello", name: "jesstelford"},
+  {tweet: "hi", name: "taylorswift"},
+  {tweet: "g'day", name: "bigbird"}
+]
+
+function makeTweet(tweetData) {
+  return tweetData.tweet + ' by @' + tweetData.name
+}
+```
+<!-- .element: class="squash" -->
+
+```javascript
+var theTweets = tweets.map(makeTweet).join('<br>')
+document.querySelector('section').innerHTML = theTweets
+```
+
+Note:
+- Link to complete code
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Introduction to Javascript
+
+## Review
+
+~~~
+
+<!-- .slide: data-background="#dddddd" -->
+
+# Review
+
+<ul>
+<li class="fragment">HTML vs CSS vs JS</li>
+<li class="fragment">Console</li>
+<li class="fragment">Types</li>
+<li class="fragment">Functions
+  <ul>
+    <li class="fragment">`.toUpperCase()`</li>
+    <li class="fragment">`greeter()`</li>
+    <li class="fragment">`makeTweet()`</li>
+  </ul>
+</li>
+<li class="fragment">DOM
+  <ul>
+    <li class="fragment">`document.querySelector()`</li>
+    <li class="fragment">`.innerHTML`</li>
+  </ul>
+</li>
+</ul>
+
+~~~
+
+### Success
+
+<img src="http://a.abcnews.go.com/images/Health/HT_sam_griner_then_02_jef_150413_16x9_992.jpg" style="max-height: 80vh; margin: 0 auto; display: block" />
+
+Note:
+- That's JS!
+
+~~~
+
+<img src="http://i.imgur.com/JveAQK5.png" style="max-height: 70vh; margin: 0 auto; display: block" />
+
+<div style="text-align: center">http://bit.ly/ga-js</div>
+
+Note:
+- Starts May 23rd
+- 2 nights a week
 
           </script>
         </section>
