@@ -186,7 +186,8 @@ body {
 .reveal table td[align="right"] {
   text-align: right; }
 
-.reveal table tr:last-child td {
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
   border-bottom: none; }
 
 .reveal sup {
@@ -311,6 +312,9 @@ body {
 
 .reveal .slides {
   text-align: left; }
+  .reveal .slides section {
+    padding-top: 0; }
 
 .reveal pre {
-  width: 100%; }
+  width: 100%;
+  font-size: 0.9em; }

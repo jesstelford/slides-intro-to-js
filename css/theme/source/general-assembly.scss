@@ -90,10 +90,15 @@ section.has-light-background {
 
   .slides {
     text-align: left;
+
+    section {
+      padding-top: 0;
+    }
   }
 
   pre {
     width: 100%;
+    font-size: 0.9em;
   }
 
 }
