@@ -551,7 +551,10 @@ Note:
 ```javascript
 "hello world".toUpperCase()
 "HELLO WORLD"
+```
+<!-- .element: class="lolight" -->
 
+```javascript
 "hello world".replace("world", "Jess")
 ```
 
@@ -787,7 +790,20 @@ Note:
 ["Amy", "Samantha", "Leeroy"]
 ```
 
-<span class="fragment">`.forEach()`</span>
+~~~
+
+# Writing functions
+
+### Array Functions
+
+```javascript
+["Amy", "Samantha", "Leeroy"]
+```
+<!-- .element: class="lolight" -->
+
+```javascript
+.forEach()
+```
 
 Note:
 - Like string; has method
@@ -801,8 +817,12 @@ Note:
 ```javascript
 ["Amy", "Samantha", "Leeroy"]
 ```
+<!-- .element: class="lolight" -->
 
-`.forEach()`
+```javascript
+.forEach()
+```
+<!-- .element: class="lolight" -->
 
 ```javascript
 ["Amy", "Samantha", "Leeroy"].forEach(greeter)
@@ -907,6 +927,7 @@ Note:
 ```javascript
 ["Amy", "Samantha", "Leeroy"].map(greeter)
 ```
+<!-- .element: class="lolight" -->
 
 Output:
 
@@ -1037,6 +1058,7 @@ Note:
 ```javascript
 tweets.map(makeTweet)
 ```
+<!-- .element: class="lolight" -->
 
 Output:
 
@@ -1069,11 +1091,23 @@ Note:
 tweets.map(makeTweet).join()
 ```
 
+~~~
+
+# Tweets
+
+### `.join()`
+
+```javascript
+tweets.map(makeTweet).join()
+```
+<!-- .element: class="lolight" -->
+
 Output:
 
 ```text
 hello by @jesstelford,hi by @taylorswift,g'day by @bigbird
 ```
+<!-- .element: class="smaller" -->
 
 Note:
 - Don't add to "snippet" yet
@@ -1102,12 +1136,14 @@ Note:
 ```javascript
 tweets.map(makeTweet).join('<br>')
 ```
+<!-- .element: class="lolight" -->
 
 Output:
 
 ```text
 hello by @jesstelford<br>hi by @taylorswift<br>g'day by @bigbird
 ```
+<!-- .element: class="smaller" -->
 
 Note:
 - Add to "Snippet"
