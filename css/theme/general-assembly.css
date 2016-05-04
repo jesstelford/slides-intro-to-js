@@ -318,3 +318,10 @@ body {
 .reveal pre {
   width: 100%;
   font-size: 0.9em; }
+  .reveal pre.lolight {
+    opacity: 0.4; }
+  .reveal pre.squash {
+    margin-bottom: 0; }
+    .reveal pre.squash + pre {
+      margin-top: 0;
+      box-shadow: none; }

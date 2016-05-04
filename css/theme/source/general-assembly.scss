@@ -99,6 +99,19 @@ section.has-light-background {
   pre {
     width: 100%;
     font-size: 0.9em;
+
+    &.lolight {
+      opacity: 0.4;
+    }
+
+    &.squash {
+      margin-bottom: 0;
+
+      & + pre {
+        margin-top: 0;
+        box-shadow: none;
+      }
+    }
   }
 
 }
