@@ -45,11 +45,609 @@
           <script type="text/template">
 # General Assembly <!-- .element: class="with-logo" -->
 
-## Super Fun Lesson <span class="fragment">(and Excitement)</span>
+## Introduction to Javascript
 
 Note:
-  Class Rules reminder<br>
-  Thanks for Exit Tickets<br>
+- Me: JS for over 12 years
+- SF -> Sydney
+- JS: set of instructions (like a recipe)
+- Works in every browser
+- Runs everywere (servers, phones, even robots!)
+
+~~~
+
+# Introduction to Javascript
+
+### Today
+
+<span class="fragment">HTML, CSS & JS</span>
+
+<span class="fragment">JS Fundamentals</span>
+
+<span class="fragment">Coding!</span>
+
+Note:
+  - HTML = structure, CSS = styles, JS = functionality / interactivity
+  - JS fundamentals: data types, functions, arrays, objects
+  - Coding: live in class!
+
+~~~
+
+# Introduction to Javascript
+
+### Google Chrome
+
+`http://chrome.google.com`
+
+Note:
+  - Chrome is best for coding
+  - Available everywhere
+  - Instal now. 5 min.
+
+~~~
+
+# Introduction to Javascript
+
+### HTML
+
+```html
+<body>
+  <section>
+    <p>Hello</p>
+    <p>World</p>
+  </section>
+</body>
+```
+
+Note:
+- [3-fingers]:
+  - 1 finger for "very familiar"
+  - 2 fingers for "kinda know it"
+  - 3 fingers for "not familiar"
+- It's the same as...
+
+~~~
+
+# Introduction to Javascript
+
+### HTML
+
+```html
+<body>                   * body
+  <section>                * section
+    <p>Hello</p>             * p: Hello
+    <p>World</p>             * p: World
+  </section>
+</body>
+```
+
+Note:
+- The same as a list in a word document
+- Let's try it...
+
+~~~
+
+# Introduction to Javascript
+
+### HTML
+
+* `about:blank`
+* Right click > "Inspect"
+* "Elements" tab
+
+Note:
+- Show them
+- This is where you see / edit HTML
+- Works for _every_ page on the internet
+- "Hand up when done"
+
+~~~
+
+# Introduction to Javascript
+
+### HTML
+
+* Find `<body></body>`
+* Right click > "Edit as HTML"
+* Paste:
+
+```html
+<body>
+  <section>
+    <p>Hello</p>
+    <p>World</p>
+  </section>
+</body>
+```
+
+Note:
+- "Hand up when you see 'Hello World'"
+- Congratulations!
+- Simplest website ever
+- Refresh, and oops; it's gone
+
+~~~
+
+# Introduction to Javascript
+
+## Don't Panic
+
+Note:
+- Nothing we do today can hurt your computer
+- Mistakes are good to learn!
+- Just refresh to start over
+
+~~~
+
+# Introduction to Javascript
+
+### CSS
+
+```html
+<style>
+  body {
+    background-color: lightslategray;
+  }
+  section {
+    font-size: 30px;
+    color: white;
+  }
+</style>
+```
+
+Note:
+- [3-fingers]:
+  - 1 finger for "very familiar"
+  - 2 fingers for "kinda know it"
+  - 3 fingers for "not familiar"
+
+~~~
+
+# Introduction to Javascript
+
+### CSS
+
+* Find `<head></head>`
+* Right click > "Edit as HTML":
+
+```html
+<style>
+  body {
+    background-color: lightslategray;
+  }
+  section {
+    font-size: 30px;
+    color: white;
+  }
+</style>
+```
+
+Note:
+- Same as for `<body>`
+- Hand up when done
+- Then, refresh the page - all changes are gone!
+
+~~~
+
+# Introduction to Javascript
+
+### CSS
+
+http://TODO: Publish a static page with this stuff in it already (gh-pages?)
+
+Note:
+- Base to work from
+
+~~~
+
+# Introduction to Javascript
+
+## Javascript
+
+Note:
+- Onto the fun stuff!
+
+~~~
+
+# Introduction to Javascript
+
+### Javascript
+
+_Console_ tab
+
+<span class="fragment">Demo</span>
+
+Note:
+- In console, can run JS
+- Example
+- Now you try
+- [Hands up when done]
+
+~~~
+
+# Javascript
+
+### Types
+
+<!-- TOOD: a table? -->
+
+<ul>
+<li class="fragment">`Math.PI`<span class="fragment"> - _number_</span></li>
+<li class="fragment">`"Hello World"`<span class="fragment"> - _string_</span></li>
+<li class="fragment">`"Hello World'`<span class="fragment"> - _Error!_</span></li>
+</ul>
+
+Note:
+- `"Hi"` vs `"Hi'`
+  - ILLEGAL token
+  - "laws" of strings say quotes have to match
+  - Don't Panic...
+
+~~~
+
+# Introduction to Javascript
+
+## Don't Panic
+
+~~~
+
+# Javascript
+
+### Types of values
+
+<ul>
+<li>`Math.PI` - _number_</li>
+<li>`"Hello World"` - _string_</li>
+<li class="fragment">`true` / `false`<span class="fragment"> - _boolean_</span></li>
+<li class="fragment">`null` / `undefined`<span class="fragment"> - _nothingness_</span></li>
+<li class="fragment">`{name: "jesstelford"}`<span class="fragment"> - _object_</span></li>
+</ul>
+
+
+Note:
+- `true`/`false`: yes/no
+- `null`/`undefined`: different from 0; implies a collection.
+- Object is a container of other types
+- We'll deal with strings & objects mostly today (most fun!)
+
+~~~
+
+# Types of values
+
+### Objects
+
+A container of named values
+
+_aka: key/value pairs_
+
+```javascript
+{
+  tweet: "Hello world",
+  author: "jesstelford"
+}
+```
+
+Note:
+- key === name
+- value === any value we just saw
+- Also known as... JSON
+
+~~~
+
+<img src="http://wallpapersdsc.net/wp-content/uploads/2016/01/Jason-Statham-Images.jpg" style="max-height: 80vh; margin: 0 auto; display: block" />
+
+Note:
+- Whoops, wrong kind of Jason
+
+~~~
+
+# Types of values
+
+### Objects
+
+## JSON
+
+~~~
+
+# Types of values
+
+### Objects
+
+Give it a try:
+
+```javascript
+{name: "Sam Gogetter", age: 42}
+```
+
+Note:
+- Try it in console
+- Hand up when done
+
+~~~
+
+# Javascript
+
+### Variables
+
+Note:
+- Only dealt with _values_ so far
+- What do we _do_ with those values?
+
+~~~
+
+# Javascript
+
+### Variables
+
+Writing to a variable
+
+```javascript
+var greeting = "hello world"
+```
+
+Note:
+- Like a bucket
+- Create bucket with `var`
+- Has a name `greeting`
+- Has a value of string type
+
+~~~
+
+# Javascript
+
+### Variables
+
+Reading from a variable
+
+```javascript
+greeting
+```
+
+Note:
+- Access it by writing out its name
+
+~~~
+
+# Javascript
+
+### Variables
+
+Changing a variable
+
+```javascript
+var greeting = "hello world"
+...
+greeting = "g'day everyone"
+```
+
+Note:
+- Change its value by using equals again, but not `var`!
+
+~~~
+
+# Javascript
+
+### Variables
+
+Give it a try:
+
+```javascript
+var greeting = "hello world"
+greeting
+greeting = "g'day everyone"
+greeting
+```
+
+Note:
+- Try it in console
+- Hand up when done
+
+~~~
+
+# Javascript
+
+## Functions
+
+Note:
+- Reusable statements
+- Don't have to rewrite again and again
+- Recipe book = book of functions
+- Ingredients = _paramters_ (bits you put in)
+
+~~~
+
+# Functions
+
+## Built in functions
+
+Note:
+- Types have functions. Known as _methods_
+
+~~~
+
+# Functions
+
+### Built in functions
+
+```javascript
+"hello world"
+```
+
+Note:
+- Revisit our String type
+
+~~~
+
+# Functions
+
+### Built in functions
+
+```javascript
+"hello world".toUpperCase()
+```
+
+Note:
+- What do you think this will do?
+
+~~~
+
+# Functions
+
+### Built in functions
+
+```javascript
+"hello world".toUpperCase()
+"HELLO WORLD"
+```
+
+Note:
+- Now you try it
+
+~~~
+
+# Functions
+
+### Built in functions
+
+```javascript
+"hello world".toUpperCase()
+"HELLO WORLD"
+
+"hello world".replace("world", "Jess")
+```
+
+Note:
+- Try this one too
+- _parameters_ go inside parentesis
+- They're the "ingredients" into "replace" recipe
+
+~~~
+
+# Functions
+
+### Built in functions
+
+```javascript
+console.log("Hello world")
+```
+
+Note:
+- Don't have to exist on types
+- Free standing
+- 43(ish) minutes at this point!
+
+~~~
+
+# Functions
+
+## Writing Functions
+
+Note:
+- we can create our own function!
+
+~~~
+
+# Writing functions
+
+### Snippets
+
+Note:
+- Using Chrome's feature "Snippets"
+- Can save our work
+- Will be switching between "Snippets" and "Console"
+
+~~~
+
+# Writing functions
+
+### Snippets
+
+* "Scripts" tab
+* "Snippets" (on left)
+* Right click > "New"
+* Name it `printer.js`
+
+~~~
+
+TODO:
+
+* Functions
+  * "Snippets" tab in Chrome to save their work
+  * Let's create our own function, `printer()` which outputs a string (`console.log("hello Jess")`?)
+    * Does the same thing every time
+    * Imagine if your website had 1000 users, you'd have to create 1000 unique functions!
+  * Change it to add a parameter for the name.
+    * `console.log("hello " + name)`
+    * The `+` joins the two strings together
+  * And alter the string in some way (eg; `str.toUpperCase()`, or `str + '!!!'`)
+  * Execute that function 3 times in a row with different data.
+    * Better than before, repeating the same thing.
+    * But; Ugh, so much repetition. If we had 1000 users, we'd still need to execute the function 1000 times
+* Arrays
+  * Arrays to the rescue!
+  * Another type; a _collection_ of other types
+    * If variables are buckets. Arrays are an empty bathtub full of buckets
+  * Create an array;
+  ```javascript
+  ["hello", "hi", "g'day"]
+  ```
+  * Square brackets and commas: square brackets are the bathtub, commas separate the buckets
+  * Like a string, has some methods. One is `forEach` to do something once per item in the array. Also known as "looping" or "iterating" over the array values.
+  * Loop over it using: `["Jess", "Kylie", "Vin"].forEach(printer)`
+  * Why is this better? Imagine you've got a huge array of values. Think; tweets on twitter! You can't write `printer()` over and over again millions of times. Instead, you iterate / loop over the array values.
+* Functions again
+  * Change `printer` to `return` instead of `console.log`
+  * `return` means to pass the new value back out of the function. So far, we've `console.log`'d, which only provides value _for our eyes_. The code can't do anything with it, unless it is `return`'d.
+  * Try run `.forEach` now; notice `undefined`. Because; `forEach` doesn't know what to do with that `return`'d value. But, `.map` does!
+  * Change the `forEach` to a `map` - still iterating, but now it captures those `return` values.
+  * Now it outputs a new array! Cool!
+* tweet function
+  * Create an array of tweets:
+  ```javascript
+  [
+    {tweet: "hello", name: "jesstelford"},
+    {tweet: "hi", name: "taylorswift"},
+    {tweet: "g'day", name: "bigbird"}
+  ]
+  ```
+    * Remember: An array is a collection of other values. Each value in this case is an object. And an object itself can also contain other values, each with a "key".
+  * New function; `makeTweet` which takes the tweet object from earlier as the parameter and makes a string out of it:
+  ```javascript
+  function makeTweet(tweetData) {
+    return tweetData.tweet + ' by @' + tweetData.name
+  }
+  ```
+  * `.map` over the array as before, and see the output is now an array of strings!
+  * Use the built in string function `.join` to connect them with `<br />`'s
+  * Capture the output string into a new variable
+  * Now, `console.log` that variable
+* DOM
+  * This is all good fun, but our users can't see the output. They can't be expected to open up the Console just to see the tweets! Let's get it into the page.
+  * Remember way back at the start, we saw this:
+  ```html
+  <body>                   * body
+    <section>                * section
+      <p>Hello</p>             * p: Hello
+      <p>World</p>             * p: World
+    </section>
+  </body>
+  ```
+  * The left is the HTML, the right is the DOM - Document Object Model. It's a way to represent HTML so Javascript can interact with it.
+  * To select a HTML element, you can use `document.querySelector` function:
+  * Back in the "Console" tab;
+  * `document.querySelector('section')`
+  * Use `document.querySelector('section').innerHTML` to see the HTML there
+  * And it's a normal variable, so we can give it a new value if we wish:
+  * `document.querySelector('section').innerHTML = greeting`
+  * Look at the page! The contents have been replaced!
+  * Back to our snippet code;
+  * Can we replace the contents of the page with the output of our `makeTweet` function?
+  * Nice! - we've injected stuff into the page based on that one original array!
+  * Check it out in the elements tab
+* Part Time GA course starting on May 23rd.
+
+
+
 
 ~~~
 
