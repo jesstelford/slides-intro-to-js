@@ -85,6 +85,10 @@ var tweets = [
 function makeTweet(tweetData) {
   return tweetData.tweet + ' by @' + tweetData.name
 }
+```
+<!-- .element: class="squash" -->
+
+```javascript
 var theTweets = tweets.map(makeTweet).join('<br>')
 document.querySelector('section').innerHTML = theTweets
 ```
